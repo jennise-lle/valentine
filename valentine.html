@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Fabi</title>
+
+<style>
+body {
+    background-color: #ffe6f0;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.box {
+    background: white;
+    width: 90%;
+    max-width: 420px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#yes {
+    background-color: #ff4d88;
+    color: white;
+}
+
+#no {
+    background-color: #cccccc;
+}
+
+.hidden {
+    display: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box" id="questionPage">
+    <h2>Will you stop pretending you don’t miss me?</h2>
+
+    <button id="yes" onclick="showLetter()">Yes</button>
+
+    <button id="no"
+        onmouseover="moveNo()"
+        ontouchstart="moveNo()"
+        onclick="moveNo()">
+        Nope
+    </button>
+</div>
+
+
+<div class="box hidden" id="letterPage">
+    <h2>I knew it 😌</h2>
+
+    <p>
+    See? That wasn’t so hard to admit.<br><br>
+
+    You can pretend all you want,<br>
+    but we both know the truth.<br><br>
+
+    Happy valentines day, babe.<br><br>
+
+    — Jennisa
+    </p>
+</div>
+
+
+<script>
+function moveNo() {
+    let noBtn = document.getElementById("no");
+
+    let x = Math.random() * 250 - 120;
+    let y = Math.random() * 180 - 90;
+
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function showLetter() {
+    document.getElementById("questionPage").classList.add("hidden");
+    document.getElementById("letterPage").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
